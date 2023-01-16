@@ -1,10 +1,13 @@
 const express= require("express")
 const { connection } = require("./config/db")
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
 const app=express()
 app.use(express.json())
 
 app.post("/",(req,res)=>{
-  console.log(req.body)
+  console.log(req)
   res.send("done")
 })
 
