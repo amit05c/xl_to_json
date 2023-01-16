@@ -5,7 +5,9 @@ var multer = require('multer');
 var upload = multer();
 const app=express()
 app.use(express.json())
-
+app.set('view engine', 'pug');
+app.set('views', './views');
+app.use(bodyParser.json());
 app.post("/",(req,res)=>{
   console.log(req)
   res.send("done")
